@@ -18,49 +18,55 @@
 @import 'variables';
 
 /*--- CONTENT ---*/
-
-/*--- Media Quaries ---*/
-/* Small devices (mobile) */
-@media screen and (max-width: 575px) {
-  $width_square: 24px;
-  .playground {
-    width: calc(($width_square * 9) + (16 * $sice_border));
-    height: calc(($width_square * 9) + (16 * $sice_border));
-    .playfield {
-      .squarefield {
-        width: calc(($width_square * 3) + (4 * $sice_border));
-        height: calc(($width_square * 3) + (4 * $sice_border));
-        .square {
-          width: calc(($width_square));
-          height: calc(($width_square));
+body {
+  background-color: $c_Win_bg;
+  main {
+    // Card
+    section.card {
+      @include text_decoration;
+      background-color: $c_Card_bg;
+      border-radius: 15px;
+      .card-qr-field {
+        display: flex;
+        justify-content: center;
+        margin: 20px;
+        img {
+          max-width: 100%;
+          max-height: 100%;
+          border-radius: 12px;
         }
       }
-    }
-    .playbar {
-      width: 100%;
+      .card-description {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 20px;
+        .heading {
+          text-align: center;
+          margin: 10px;
+        }
+        .text {
+          text-align: center;
+          margin: 10px;
+        }
+      }
     }
   }
 }
 
+/*--- Media Quaries ---*/
+/* Small devices (mobile) */
+@media screen and (max-width: 375px) {
+  .section.card {
+    width: 90%;
+  }
+}
+
 /* Large devices (desktop) */
-@media screen and (min-width: 575px) {
-  $width_square: 32px;
-  .playground {
-    width: calc(($width_square * 9) + (16 * $sice_border));
-    height: calc(($width_square * 9) + (16 * $sice_border));
-    .playfield {
-      .squarefield {
-        width: calc(($width_square * 3) + (4 * $sice_border));
-        height: calc(($width_square * 3) + (4 * $sice_border));
-        .square {
-          width: calc(($width_square));
-          height: calc(($width_square));
-        }
-      }
-    }
-    .playbar {
-      width: 100%;
-    }
+@media screen and (max-width: 1440px) {
+  .section.card {
+    width: 30%;
   }
 }
 
