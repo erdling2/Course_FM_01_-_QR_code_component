@@ -19,13 +19,29 @@
 
 /*--- CONTENT ---*/
 body {
+  width: 100vw;
+  height: 100vh;
   background-color: $c_Win_bg;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  // HEADER
+  header {
+    height: 10px;
+    width: 100%;
+  }
+
+  // MAIN
   main {
     // Card
+    width: 100%;
     section.card {
       @include text_decoration;
+      display: flex;
+      flex-direction: column;
       background-color: $c_Card_bg;
       border-radius: 15px;
+      margin: auto;
       .card-qr-field {
         display: flex;
         justify-content: center;
@@ -44,7 +60,6 @@ body {
         margin: 20px;
         .heading {
           text-align: center;
-          margin: 10px;
         }
         .text {
           text-align: center;
@@ -53,20 +68,32 @@ body {
       }
     }
   }
+  // FOOTER
+  footer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 10px;
+    margin-bottom: 10px;
+    .attribution {
+      bottom: 0;
+      text-align: center;
+    }
+  }
 }
 
 /*--- Media Quaries ---*/
 /* Small devices (mobile) */
-@media screen and (max-width: 375px) {
-  .section.card {
-    width: 90%;
+@media screen and (min-width: 0px) {
+  section.card {
+    width: 85%;
   }
 }
 
 /* Large devices (desktop) */
-@media screen and (max-width: 1440px) {
-  .section.card {
-    width: 30%;
+@media screen and (min-width: 650px) {
+  section.card {
+    width: 28%;
   }
 }
 
